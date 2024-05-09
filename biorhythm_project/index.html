@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biorhythm Calculator</title>
+</head>
+<body>
+    <h1>Biorhythm Calculator</h1>
+     <h1>{{ message }}</h1>
+    <form action="{% url 'calculate_biorhythm' %}" method="post">
+        {% csrf_token %}
+        <label for="birthdate">Enter your birthdate (YYYY-MM-DD):</label>
+        <input type="text" id="birthdate" name="birthdate">
+        <input type="submit" value="Calculate">
+    </form>
+    <div>{% include 'result.html' %}</div>
+</body>
+</html>
